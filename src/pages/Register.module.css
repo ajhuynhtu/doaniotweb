@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: white;
+}
+
+/* Left side - Illustration */
+.leftSide {
+  flex: 1;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.illustrationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.houseImage {
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 40px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.welcomeText {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.welcomeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.welcomeSubtitle {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 350px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Right side - Form */
+.rightSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 40px;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formSubtitle {
+  color: #94a3b8;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.inputField:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inputField::placeholder {
+  color: #94a3b8;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: #2563eb;
+}
+
+.footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.footerLink {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .leftSide {
+    display: none;
+  }
+}

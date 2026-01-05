@@ -1,58 +1,102 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 80vh;
-    padding: 24px;
-    background: #fff; 
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .content {
-    text-align: center;
-    max-width: 600px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.textContent {
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  z-index: 10;
+  max-width: 450px;
 }
 
 .title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 16px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #718096;
-    margin-bottom: 48px;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
 }
 
-.imageContainer {
-    margin-bottom: 48px;
-    display: flex;
-    justify-content: center;
+/* Image section taking up the right side with a diagonal split */
+.imageContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%; /* Take up more than half */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.image {
-    max-width: 100%;
-    height: auto;
-    width: 320px; /* Điều chỉnh kích thước ảnh cho phù hợp */
-    object-fit: contain;
+/* The diagonal background shape */
+.imageBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f5f9;
+  /* Create the diagonal cut */
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: -1;
 }
 
-.button {
-    background: #3182ce;
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-    box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+.houseImage {
+  width: 100%;
+  max-width: 800px; /* Bigger image */
+  height: auto;
+  object-fit: contain;
+  margin-left: 50px; /* Push slightly right to center in the shape */
+  margin-bottom: 50px;
+  animation: float 6s ease-in-out infinite;
 }
 
-.button:hover {
-    background: #2b6cb0;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .imageContent {
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .imageBackground {
+    clip-path: none;
+    opacity: 0.5;
+  }
+  
+  .textContent {
+    bottom: 40px;
+    left: 30px;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
 }

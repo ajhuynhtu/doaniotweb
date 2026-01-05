@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import styles from "./Sidebar.module.css";
+import { FiHome, FiGrid, FiSmartphone, FiUsers, FiBarChart2, FiSettings, FiLogOut } from "react-icons/fi";
+import logoImg from "../assets/logo.png";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -21,8 +23,7 @@ const Sidebar = () => {
     <aside className={styles.sidebar}>
       {/* Logo */}
       <div className={styles.logo}>
-        <img src="https://www.svgrepo.com/show/331575/smart-home.svg" alt="Logo" style={{width: 24, marginRight: 8}} />
-        smarthouse
+        <img src={logoImg} alt="Logo" style={{width: 150, height: 'auto', objectFit: 'contain'}} />
       </div>
 
       {/* User Profile Info */}
@@ -42,27 +43,27 @@ const Sidebar = () => {
         <ul>
           <li className={isActive("/") ? styles.active : ""}>
             <Link to="/">
-              <span className={styles.icon}>🏠</span> Spaces
+              <span className={styles.icon}><FiHome /></span> Spaces
             </Link>
           </li>
           <li className={isActive("/rooms") ? styles.active : ""}>
             <Link to="/rooms">
-              <span className={styles.icon}>🚪</span> Rooms
+              <span className={styles.icon}><FiGrid /></span> Rooms
             </Link>
           </li>
           <li className={isActive("/devices") ? styles.active : ""}>
             <Link to="/devices">
-              <span className={styles.icon}>📱</span> Devices
+              <span className={styles.icon}><FiSmartphone /></span> Devices
             </Link>
           </li>
           <li className={isActive("/members") ? styles.active : ""}>
             <Link to="/members">
-              <span className={styles.icon}>👥</span> Members
+              <span className={styles.icon}><FiUsers /></span> Members
             </Link>
           </li>
           <li className={isActive("/analytics") ? styles.active : ""}>
             <Link to="/analytics">
-              <span className={styles.icon}>📊</span> Statistics
+              <span className={styles.icon}><FiBarChart2 /></span> Statistics
             </Link>
           </li>
         </ul>
@@ -71,7 +72,7 @@ const Sidebar = () => {
              <ul>
                  <li className={isActive("/settings") ? styles.active : ""}>
                     <Link to="/settings">
-                        <span className={styles.icon}>⚙️</span> Profile & Settings
+                        <span className={styles.icon}><FiSettings /></span> Profile & Settings
                     </Link>
                 </li>
              </ul>
@@ -81,7 +82,7 @@ const Sidebar = () => {
       {/* Logout */}
       <div className={styles.logout}>
         <button onClick={handleLogout} className={styles.logoutBtn}>
-          <span className={styles.icon}>↪️</span> Log out
+          <span className={styles.icon}><FiLogOut /></span> Log out
         </button>
       </div>
     </aside>

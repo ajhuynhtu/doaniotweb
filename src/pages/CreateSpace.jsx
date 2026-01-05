@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CreateSpace.module.css';
+import houseImg from '../assets/house.png';
 
 // Bạn có thể thay thế ảnh này bằng ảnh thật từ assets nếu có
 // Tạm thời dùng ảnh online giống mẫu hoặc ảnh placeholder
-const defaultHouseImage = "https://images.unsplash.com/photo-1600596542815-27b88e54e60f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+const defaultHouseImage = houseImg;
 
 const CreateSpace = () => {
   const navigate = useNavigate();

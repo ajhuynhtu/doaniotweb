@@ -8,6 +8,7 @@ import lampImg from '../assets/lamp1.png';
 import speakerImg from '../assets/speaker.png';
 import aromaImg from '../assets/aroma.png';
 import humidImg from '../assets/humid.png';
+import airImg from '../assets/air.png';
 
 const RoomDetail = () => {
     const navigate = useNavigate();
@@ -16,8 +17,9 @@ const RoomDetail = () => {
     const [devices, setDevices] = useState([
         { id: 1, name: 'Smart Lamp', room: 'Living Room', image: lampImg, isOn: true, type: 'lamp' },
         { id: 2, name: 'Speaker', room: 'Living Room', image: speakerImg, isOn: false, type: 'speaker' },
-        { id: 3, name: 'Aroma Diffuser', room: 'Living Room', image: aromaImg, isOn: false, type: 'aroma' },
-        { id: 4, name: 'Humidifier', room: 'Living Room', image: humidImg, isOn: false, type: 'humid' },
+        { id: 3, name: 'Air Conditioner', room: 'Living Room', image: airImg, isOn: true, type: 'air-conditioner' },
+        { id: 4, name: 'Aroma Diffuser', room: 'Living Room', image: aromaImg, isOn: false, type: 'aroma' },
+        { id: 5, name: 'Humidifier', room: 'Living Room', image: humidImg, isOn: false, type: 'humid' },
     ]);
 
     const toggleDevice = (id) => {
@@ -65,6 +67,8 @@ const RoomDetail = () => {
                             onClick={() => {
                                 if (device.type === 'speaker') {
                                     navigate('/device-control');
+                                } else if (device.type === 'air-conditioner') {
+                                    navigate('/ac-control');
                                 } else {
                                     toggleDevice(device.id);
                                 }

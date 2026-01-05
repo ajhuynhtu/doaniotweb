@@ -1,27 +1,24 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./Welcome.module.css";
-import houseImg from "../assets/house.png"; 
+import React from 'react';
+import styles from './Welcome.module.css';
+import houseImg from '../assets/nha.png';
 
 const Welcome = () => {
-  const navigate = useNavigate();
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Looks like you have no spaces set up.</h1>
-        <p className={styles.subtitle}>Add your house and start your smart life!</p>
-        
-        <div className={styles.imageContainer}>
-             <img src={houseImg} alt="Smart House" className={styles.image} />
+        <div className={styles.textContent}>
+            <h1 className={styles.title}>
+              Easy living with your <br />
+              smart home 💡
+            </h1>
+            <p className={styles.subtitle}>
+              Get you smart devices in one place and manage all of these with a few taps.
+            </p>
         </div>
-
-        <button 
-          className={styles.button}
-          onClick={() => navigate('/create-space')}
-        >
-          Set up your space
-        </button>
+        <div className={styles.imageContent}>
+            <div className={styles.imageBackground}></div>
+            <img src={houseImg} alt="Smart Home" className={styles.houseImage} />
+        </div>
       </div>
     </div>
   );

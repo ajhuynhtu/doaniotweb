@@ -11,13 +11,14 @@
     color: #fff;
     padding: 20px 32px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Canh lề trên để đẩy text lên cao */
     justify-content: space-between;
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
-    height: 120px;
+    height: 350px; /* Tăng chiều cao header */
     position: relative;
     z-index: 10;
+    padding-top: 40px; /* Thêm padding top */
 }
 
 .backButton {
@@ -61,20 +62,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
+    padding: 0 20px 40px; /* Bỏ padding top vì đã dùng margin âm */
     overflow-y: auto;
-    margin-top: -60px; /* Đẩy nội dung lên đè lên header một chút nếu muốn, hoặc chỉnh lại */
+    margin-top: -180px; /* Đẩy nội dung lên nhiều hơn để đè lên header */
     z-index: 20;
 }
 
 .imageWrapper {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: 300px;
+    max-width: 600px; /* Giới hạn chiều rộng */
+    height: 380px; /* Chiều cao cố định, đủ lớn */
+    min-height: 380px;
+    flex-shrink: 0;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     margin-bottom: 40px;
     background: #eee;
     border: 4px solid #fff;
@@ -83,7 +86,8 @@
 .houseImage {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Đảm bảo ảnh phủ kín khung mà không bị méo */
+    object-position: center;
 }
 
 .uploadButton {
