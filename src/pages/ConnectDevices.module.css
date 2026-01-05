@@ -1,0 +1,439 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f8fafc; /* Nền sáng nhẹ */
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    background: #1a202c; 
+    color: #fff;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px; /* Tăng chiều cao để chứa phần card đè lên */
+    position: relative;
+    z-index: 10;
+    align-items: flex-start; /* Căn lên trên */
+    padding-top: 32px;
+}
+
+.backButton {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerTitle {
+    text-align: center;
+    flex: 1;
+}
+
+.headerTitle h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.headerTitle p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.stepIndicator {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Space Card nằm đè lên header và content */
+.spaceCardWrapper {
+    padding: 0 40px;
+    margin-top: -60px; /* Kéo lên đè vào header */
+    z-index: 20;
+    position: relative;
+}
+
+.spaceCard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spaceInfoLeft {
+    display: flex;
+    align-items: center;
+}
+
+.spaceThumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.spaceText h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+}
+
+.editIcon {
+    font-size: 0.8rem;
+    color: #3b82f6;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.spaceText p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.spaceStats {
+    display: flex;
+    gap: 16px;
+}
+
+.statItem {
+    background: #f7fafc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #4a5568;
+    border: 1px solid #edf2f7;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.dot {
+    font-size: 1.2rem;
+    line-height: 0.5;
+}
+
+/* Nội dung chính */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 40px;
+    overflow-y: auto;
+}
+
+.listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.listTitle h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.listTitle p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.searchBox {
+    position: relative;
+    width: 300px;
+    z-index: 50; /* Ensure search dropdown is on top */
+}
+
+.searchBox input {
+    width: 100%;
+    padding: 10px 16px;
+    padding-right: 40px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.searchBox input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.searchIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%; /* Adjusted from top: 20px if input height is small */
+    top: 20px; /* Assuming input height is around 40px, centering might differ */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Search Dropdown Styles */
+.searchResultsDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-top: 8px;
+    border: 1px solid #edf2f7;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.resultsHeader {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #718096;
+    background: #f7fafc;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.resultsList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resultItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f7fafc;
+    transition: background 0.2s;
+}
+
+.resultItem:last-child {
+    border-bottom: none;
+}
+
+.resultItem:hover {
+    background: #f8fafc;
+}
+
+.resultImage {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 12px;
+    padding: 4px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.resultInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultName {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.resultStatusConnected {
+    font-size: 0.75rem;
+    color: #10b981;
+}
+
+.resultStatusNotConnected {
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.resultActionBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: #edf2f7;
+    color: #3182ce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.resultActionBtn:hover {
+    background: #e2e8f0;
+}
+
+.noResults {
+    padding: 20px;
+    text-align: center;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.deviceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.deviceCard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    position: relative;
+    border: 1px solid #edf2f7;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* New active state styling */
+.activeCard {
+    border-color: #3b82f6; /* Blue border */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.deviceCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.deviceImageWrapper {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.deviceImageWrapper img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.deviceInfo h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+.statusNotConnected {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.statusConnected {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #10b981; /* Green */
+    font-weight: 500;
+}
+
+.addButton {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #3b82f6;
+    background: #fff;
+    color: #3b82f6;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.addButton:hover {
+    background: #ebf8ff;
+}
+
+/* Update added button to be transparent/outline or trash style as per image */
+/* Image shows a trash icon, grey or light color? Let's look closely. */
+/* Actually the image shows a Trash icon in a circle. */
+.addButton.added {
+    background: #fff;
+    color: #a0aec0; /* Grey trash icon */
+    border-color: #e2e8f0;
+    font-size: 1rem;
+}
+.addButton.added:hover {
+    color: #e53e3e; /* Red on hover for delete */
+    border-color: #e53e3e;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 40px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.footerText {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.footerButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.skipButton {
+    background: #edf2f7;
+    color: #4a5568;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.continueButton {
+    background: #3b82f6; /* Blue active as shown in image */
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.continueButton:hover {
+    background: #2563eb;
+}

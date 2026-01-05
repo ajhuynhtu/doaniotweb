@@ -1,0 +1,250 @@
+.container {
+  min-height: 100vh;
+  background-color: #f7fafc;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 40px;
+}
+
+.header {
+  background-color: #1a202c;
+  color: white;
+  padding: 24px 40px 60px; /* Extra padding bottom for overlap */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.backButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.headerTitle {
+  text-align: center;
+}
+
+.headerTitle h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.headerTitle p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.stepIndicator {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Space Card */
+.spaceCardWrapper {
+  padding: 0 40px;
+  margin-top: -40px; /* Overlap header */
+}
+
+.spaceCard {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.spaceInfoLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spaceThumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.spaceText h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editIcon {
+  color: #4299e1;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.spaceAddress {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.spaceStats {
+  display: flex;
+  gap: 16px;
+}
+
+.statTag {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statRooms { background: #e6fffa; color: #2c7a7b; }
+.statDevices { background: #faf5ff; color: #805ad5; }
+.statMembers { background: #fffaf0; color: #dd6b20; }
+
+.dot { font-size: 1.2rem; line-height: 0; }
+
+/* Grid Layout */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px 40px;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.countBadge {
+  background: #edf2f7;
+  color: #718096;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+/* List Items */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.itemIconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.itemImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.itemInfo h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.itemSubtext {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+.itemAction {
+  color: #cbd5e0;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.itemAction:hover {
+  color: #e53e3e;
+}
+
+.membersSection {
+  grid-column: 1 / -1; /* Full width */
+}
+
+.membersList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Footer */
+.footer {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.footerText {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.doneButton {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 12px 48px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.doneButton:hover {
+  background: #2b6cb0;
+}

@@ -1,0 +1,473 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8fafc;
+  overflow-y: auto;
+}
+
+.headerSection {
+  padding: 32px 40px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backButton {
+  background: #edf2f7;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: #4a5568;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.backButton:hover {
+  background: #e2e8f0;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subTitle {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  margin-bottom: 4px;
+}
+
+.headerTitle h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.homeSelector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.homeIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Main Content Layout */
+.mainContent {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 0 60px 40px;
+  align-items: start;
+}
+
+/* Left Column */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.deviceVisual {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mainDeviceImage {
+  width: 220px;
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+}
+
+.circleBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Ripples */
+.ripple1, .ripple2, .ripple3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+}
+
+.ripple1 { width: 280px; height: 280px; }
+.ripple2 { width: 340px; height: 340px; opacity: 0.7; }
+.ripple3 { width: 400px; height: 400px; opacity: 0.4; }
+
+.controlsGroup {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controlRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.controlRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+/* Toggle Switch Large */
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  background: #cbd5e0;
+  border-radius: 30px;
+  padding: 4px;
+  cursor: pointer;
+  width: 80px;
+  height: 36px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.toggleSwitch.active {
+  background: #3182ce;
+}
+
+.toggleKnob {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.active .toggleKnob {
+  transform: translateX(44px);
+}
+
+.toggleLabel {
+  position: absolute;
+  right: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.active .toggleLabel {
+  opacity: 1;
+  left: 12px;
+  right: auto;
+}
+
+.batteryStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.batteryIcon {
+  color: #48bb78; /* Green */
+}
+
+/* Volume Slider */
+.volumeSliderContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+  background: #f7fafc;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.volumeIcon {
+  color: #3182ce;
+  background: #ebf8ff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.volumeSlider {
+  flex: 1;
+  max-width: 150px;
+  height: 6px;
+  -webkit-appearance: none;
+  background: #e2e8f0;
+  border-radius: 3px;
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #3182ce;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.2);
+}
+
+.volumeValue {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  width: 40px;
+  text-align: right;
+}
+
+/* Right Column */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.spotifyCard, .scenesCard {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.roomLabel {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.moreIcon {
+  color: #a0aec0;
+  cursor: pointer;
+}
+
+.albumArtWrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.albumArt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trackInfo h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.trackInfo p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+.progressContainer {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  background: #edf2f7;
+  border-radius: 2px;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: #3182ce;
+  border-radius: 2px;
+}
+
+.progressKnob {
+  width: 12px;
+  height: 12px;
+  background: #3182ce;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.timeText {
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+.buttonsRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: #3182ce;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.playBtn {
+  background: #3182ce;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+}
+
+/* Scenes List */
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  background: #edf2f7;
+  color: #718096;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.scenesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sceneItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sceneInfo h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.sceneInfo p {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.smallToggle {
+  width: 40px;
+  height: 24px;
+  background: #cbd5e0;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.smallToggle.active {
+  background: #3182ce;
+}
+
+.smallKnob {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.smallToggle.active .smallKnob {
+  transform: translateX(16px);
+}

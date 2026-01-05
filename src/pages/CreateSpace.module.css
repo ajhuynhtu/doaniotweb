@@ -1,0 +1,205 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #fff;
+    position: relative;
+}
+
+.header {
+    background: #1a202c; /* Màu tối như thiết kế */
+    color: #fff;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    height: 120px;
+    position: relative;
+    z-index: 10;
+}
+
+.backButton {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerTitle {
+    text-align: center;
+    flex: 1;
+}
+
+.headerTitle h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.headerTitle p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.stepIndicator {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    margin-top: -60px; /* Đẩy nội dung lên đè lên header một chút nếu muốn, hoặc chỉnh lại */
+    z-index: 20;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    background: #eee;
+    border: 4px solid #fff;
+}
+
+.houseImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.uploadButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.formGroup {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 32px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #3182ce;
+}
+
+.suggestions {
+    text-align: center;
+    color: #718096;
+}
+
+.suggestions p {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.suggestionButtons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.suggestionBtn {
+    background: #edf2f7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill shape */
+    color: #4a5568;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.suggestionBtn:hover {
+    background: #e2e8f0;
+}
+
+/* Footer style giống trong ảnh */
+.footer {
+    padding: 20px 40px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.footerInputWrapper {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footerInput {
+    border: none;
+    font-size: 1rem;
+    color: #a0aec0;
+    width: 100%;
+    outline: none;
+    background: transparent;
+}
+
+.continueButton {
+    background: #3182ce;
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.continueButton:hover {
+    background: #2b6cb0;
+}

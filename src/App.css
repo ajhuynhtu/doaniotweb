@@ -1,0 +1,33 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.page-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+/* Ẩn header cũ nếu không cần thiết cho trang Welcome, 
+   nhưng có thể giữ lại cho các trang khác hoặc điều chỉnh sau.
+   Trong thiết kế mẫu, có vẻ như header được tích hợp hoặc đơn giản hóa. 
+   Tạm thời giữ nguyên structure nhưng reset background.
+*/
+
+/* Reset default styles from Create React App / Vite template */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
